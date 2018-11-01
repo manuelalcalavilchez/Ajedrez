@@ -62,7 +62,14 @@ public class Posicion
         setColumna(columna);
     }
 
-
+   
+       
+    public Posicion(Posicion posicion)
+    {
+       this.fila=posicion.fila;
+       this.columna=posicion.columna;   
+         
+    }
 
 
 }
