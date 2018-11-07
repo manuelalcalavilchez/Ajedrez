@@ -101,6 +101,11 @@ public class Posicion
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "La posicion es: {fila=" + fila + "y columna=" + columna + '}';
+    }
     
     
 
