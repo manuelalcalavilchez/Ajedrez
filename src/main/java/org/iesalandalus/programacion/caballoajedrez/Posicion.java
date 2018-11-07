@@ -66,13 +66,42 @@ public class Posicion
     }
 
    
-       
+       //contructor copia
     public Posicion(Posicion posicion)
     {
        this.fila=posicion.fila;
        this.columna=posicion.columna;   
         
     }
+        //metodo equals
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Posicion other = (Posicion) obj;
+        if (this.fila != other.fila) {
+            return false;
+        }
+        if (this.columna != other.columna) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 
 }
