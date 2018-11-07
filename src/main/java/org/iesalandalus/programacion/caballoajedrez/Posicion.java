@@ -6,7 +6,7 @@
 package org.iesalandalus.programacion.caballoajedrez;
 
 /**
- *
+ * 
  * @author Manuel
  */
 public class Posicion 
@@ -28,7 +28,7 @@ public class Posicion
         }else  
           
         {
-            throw new IllegalArgumentException("El valor fila esta fuera de su rango válido (1-8)");
+            throw new IllegalArgumentException("ERROR:El valor fila esta fuera de su rango válido (1-8)");
         }
     }
     
@@ -39,27 +39,30 @@ public class Posicion
 
     public void setColumna(char columna) {
         
-        if (columna==a || columna==b || columna==c || columna==d || columna==e || columna==f || columna==g || columna==h)
+        if (columna>='a' || columna <='h')
         {
         this.columna = columna;
     } else
-            throw new IllegalArgumentException("El valor columna esta fuera de su rango válido (a-h)");
+            throw new IllegalArgumentException("ERROR:El valor columna esta fuera de su rango válido (a-h)");
         }
     
     //contructor que acepte como parámetros la fila y la columna y los asigne a los atributos si son correctos, 
     //y si no, que lance una excepción indicando el problema.
-    /**
-     * Constructor que inicializa todos los atributos a través de parámetros
-     * @param fila 
-     * @param columna 
-     */
+           
     public Posicion (int fila,char columna)
     {
         
         /*Llamamos al método que permite validar los parametos de fila
          y columna   */
-        setFila(fila);
-        setColumna(columna);
+        try {
+            setFila(fila);
+        } catch (Exception e) {
+        }
+        try {
+          setColumna(columna);  
+        } catch (Exception e) {
+        }
+        
     }
 
    
@@ -68,7 +71,7 @@ public class Posicion
     {
        this.fila=posicion.fila;
        this.columna=posicion.columna;   
-         
+        
     }
 
 
