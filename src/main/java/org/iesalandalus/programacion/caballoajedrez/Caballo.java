@@ -42,7 +42,23 @@ public class Caballo {
            this.color=Color.NEGRO;
            this.posicion= new Posicion (8,'b');
                       
-           
-       }
+        }
+       
+       //constructor para la clase que acepte como parámetro 
+       //el color que creará un caballo de dicho color cuya posición será 
+       //'1b' si es blanco o '8b' si es negro.
+       public Caballo (Color color)
+{
+        //comprobar que el parámetro no sea null, ya que estás pasando un objeto.
+        if (color==null)
+            throw new IllegalArgumentException("Error:El parametro es null");
+                    
+        //comprobar si es de color blanco, asignarle la posición 1b, y si no, la posición 8b.
+        if (color==Color.BLANCO)
+            this.posicion= new Posicion (1,'b');
+                    else
+            this.posicion=new Posicion (8,'b');
+
+}
     
 }
