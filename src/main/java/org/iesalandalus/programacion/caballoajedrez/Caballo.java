@@ -36,6 +36,13 @@ public class Caballo {
             throw new IllegalArgumentException("ERROR: Argumento nulo");
         this.posicion = posicion;
     }
-       
+    //creo un contructor por defecto que cree un caballo negro en posicion 8b. 
+    
+       public Caballo(Color color, Posicion posicion){
+           this.color=Color.NEGRO;
+           this.posicion= new Posicion (8,'b');
+                      
+           
+       }
     
 }
