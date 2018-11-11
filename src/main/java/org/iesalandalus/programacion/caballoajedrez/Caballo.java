@@ -5,6 +5,8 @@
  */
 package org.iesalandalus.programacion.caballoajedrez;
 
+import com.sun.org.apache.bcel.internal.generic.SWITCH;
+import javax.naming.OperationNotSupportedException;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 /**
@@ -18,7 +20,7 @@ public class Caballo {
     private Posicion posicion;
     private int opcion;//variable necesaria para realizar operaciones en los metodos
     private char paramColum;//variable necesaria para realizar operaciones en los metodos
-
+    private int movimiento;//variable necesaria para realizar operaciones en el metodo mover
     //metodos getters and setters
 
     public Color getColor() {
@@ -74,7 +76,7 @@ public class Caballo {
                  System.out.println("Introduzca el color deseado para el caballo: 1 Blanco, 2 Negro");
                  opcion= Entrada.entero();
                  if (opcion !=1 || opcion!=2)
-                     throw new IllegalArgumentException("ERROR: Valor no valido para la seleccion de color")
+                     throw new IllegalArgumentException("ERROR: Valor no valido para la seleccion de color");
                  if (opcion==1)
                  this.color=Color.BLANCO;
                  else   
@@ -107,6 +109,128 @@ public class Caballo {
        this.posicion=cab.posicion;   
         
         }    
+        
+        //implemento método mover
+        public void mover(Direccion direccion) 
+		if (direccion == null) {
+			throw new IllegalArgumentException("La dirección no puede ser nula.");
+		}
+		
+                switch(direccion){
+                    case ABAJO_DERECHA:
+                        try {
+                            posicion.setColumna(posicion.getColumna()+1);
+                        } catch (Exception e) {
+                        throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        try {
+                            posicion.setFila(posicion.getFila()-2);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        
+                        break;
+                    case ABAJO_IZQUIERDA:
+                        try {
+                            posicion.setColumna(posicion.getColumna()-1);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        try {
+                            posicion.setFila(posicion.getFila()-2);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        
+                         break;
+                    case ARRIBA_DERECHA:
+                        try {
+                             posicion.setColumna(posicion.getColumna()+1);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        try {
+                             posicion.setFila(posicion.getFila()+2);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                       
+                         break;
+                         
+                    case ARRIBA_IZQUIERDA:
+                        try {
+                             posicion.setColumna(posicion.getColumna()-1);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        try {
+                            posicion.setFila(posicion.getFila()+2);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        
+                         break;
+                    case DERECHA_ABAJO:
+                        try {
+                            posicion.setColumna(posicion.getColumna()+2);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        try {
+                             posicion.setFila(posicion.getFila()-1);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                       
+                         break;
+                    case DERECHA_ARRIBA:
+                        try {
+                             posicion.setColumna(posicion.getColumna()+2);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        try {
+                            posicion.setFila(posicion.getFila()+1);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        
+                         break;
+                    case IZQUIERDA_ABAJO:
+                        try {
+                             posicion.setColumna(posicion.getColumna()-2);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        try {
+                             posicion.setFila(posicion.getFila()-1);
+                        } catch (Exception e) {
+                        } throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                       
+                         break;
+                    case IZQUIERDA_ARRIBA:
+                        try {
+                             posicion.setColumna(posicion.getColumna()-2);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                        try {
+                             posicion.setFila(posicion.getFila()+1);
+                        } catch (Exception e) {
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
+                       
+                         break;
+                        
+                    
+                
+                
+                
+                
+                
+		}
+               
+        
         
         
 }
