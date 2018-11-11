@@ -16,7 +16,9 @@ public class Caballo {
     //delcaracion de atributos
     private Color color;
     private Posicion posicion;
-    
+    private int opcion;//variable necesaria para realizar operaciones en los metodos
+    private char paramColum;//variable necesaria para realizar operaciones en los metodos
+
     //metodos getters and setters
 
     public Color getColor() {
@@ -60,16 +62,47 @@ public class Caballo {
             this.posicion= new Posicion (1,'b');
                     else
             this.posicion=new Posicion (8,'b');
+}
+        /*Crea un constructor para la clase que acepte como parámetros el color y la columna inicial.
+        La columna inicial debe ser la 'b' o la 'g' 
+        (de lo contrario debe lanzar la excepción IllegalArgumentException con un mensaje adecuado) 
+        y creara un caballo del color dado y colocado en dicha columna y cuya 
+        fila será la 1 si el blanco y la 8 si es el negro.*/
+        public Caballo (Color color, Posicion posicion)
+        {
+            do
+            {               
+                 System.out.println("Introduzca el color deseado para el caballo: 1 Blanco, 2 Negro");
+                 opcion= Entrada.entero();
+                 if (opcion==1)
+                 this.color=Color.BLANCO;
+                 else   
+                 this.color=Color.NEGRO;
+            }while (opcion<1 && opcion>2);
+            
+            System.out.println("Introduzca la columna deseada ( debe ser 'g' o 'b'");
+            paramColum=Entrada.caracter();
+            
+            if (paramColum!='g' || paramColum!='d')
+                    throw new IllegalArgumentException("ERROR:Esa columna es erronea");
+  
+                    if (paramColum == 'g' && this.color==Color.BLANCO)
+                        this.posicion= new Posicion (1,'g');
+                    if (paramColum == 'g' && this.color==Color.NEGRO)
+                        this.posicion= new Posicion (8,'g');
+                    if (paramColum == 'b' && this.color==Color.BLANCO)
+                        this.posicion= new Posicion (1,'b');
+                    if (paramColum == 'b' && this.color==Color.NEGRO)
+                        this.posicion= new Posicion (8,'b');
+                                       
+        }
         
-        //Crea un constructor para la clase que acepte como parámetros el color y la columna inicial.
-        //La columna inicial debe ser la 'b' o la 'g' 
-        //(de lo contrario debe lanzar la excepción IllegalArgumentException con un mensaje adecuado) 
-        //y creara un caballo del color dado y colocado en dicha columna y cuya 
-        //fila será la 1 si el blanco y la 8 si es el negro.
+       
         
-      
         
 }
-}
+        
+
+
     
 
