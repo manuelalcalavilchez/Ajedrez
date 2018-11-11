@@ -6,6 +6,7 @@
 package org.iesalandalus.programacion.caballoajedrez;
 
 import com.sun.org.apache.bcel.internal.generic.SWITCH;
+import java.util.Objects;
 import javax.naming.OperationNotSupportedException;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
@@ -220,21 +221,39 @@ public class Caballo {
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                        
-                         break;
+                         break;      
+                                                        
+                    }
+                 
+                } 
+                //implemento metodo equals. Solo Color y Posicion, ya que las otras variables no definen el objeto
+                    @Override
+                    public int hashCode() {
+                        int hash = 7;
+                        return hash;
+                    }
+
+                    @Override
+                    public boolean equals(Object obj) {
+                        if (this == obj) {
+                            return true;
+                        }
+                        if (obj == null) {
+                            return false;
+                        }
+                        if (getClass() != obj.getClass()) {
+                            return false;
+                        }
+                        final Caballo other = (Caballo) obj;
+                        if (this.color != other.color) {
+                            return false;
+                        }
+                        if (!Objects.equals(this.posicion, other.posicion)) {
+                            return false;
+                        }
+                        return true;
                         
-                    
-                
-                
-                                
-                
-		}
-               
-        
-        
-        
-
-        
-
-
-        } 
-}
+                        
+                        
+                    }
+                }
