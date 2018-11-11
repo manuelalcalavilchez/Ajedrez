@@ -97,7 +97,15 @@ public class Caballo {
                                        
         }
         
-       
+        //contructor copia
+        public Caballo(final Caballo cab)
+        {
+       if (cab==null)
+            throw new IllegalArgumentException("ERROR: Copiando objeto vacio");
+       this.color=cab.color;
+       this.posicion=cab.posicion;   
+        
+        }    
         
         
 }
