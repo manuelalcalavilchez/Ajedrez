@@ -256,4 +256,9 @@ public class Caballo {
                         
                         
                     }
-                }
+                    //implemento el método toString
+                    @Override
+                    public String toString() {
+                        return "El Caballo es de color " + color + ", y está en la posición= " + posicion ;
+                    }
+                                }
