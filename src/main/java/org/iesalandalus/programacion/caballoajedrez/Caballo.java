@@ -70,15 +70,16 @@ public class Caballo {
         fila será la 1 si el blanco y la 8 si es el negro.*/
         public Caballo (Color color, Posicion posicion)
         {
-            do
-            {               
+                      
                  System.out.println("Introduzca el color deseado para el caballo: 1 Blanco, 2 Negro");
                  opcion= Entrada.entero();
+                 if (opcion !=1 || opcion!=2)
+                     throw new IllegalArgumentException("ERROR: Valor no valido para la seleccion de color")
                  if (opcion==1)
                  this.color=Color.BLANCO;
                  else   
                  this.color=Color.NEGRO;
-            }while (opcion<1 && opcion>2);
+           
             
             System.out.println("Introduzca la columna deseada ( debe ser 'g' o 'b'");
             paramColum=Entrada.caracter();
