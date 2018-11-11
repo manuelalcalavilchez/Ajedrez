@@ -111,7 +111,7 @@ public class Caballo {
         }    
         
         //implemento método mover
-        public void mover(Direccion direccion) 
+        public void mover(Direccion direccion)throws OperationNotSupportedException { 
 		if (direccion == null) {
 			throw new IllegalArgumentException("La dirección no puede ser nula.");
 		}
@@ -205,8 +205,8 @@ public class Caballo {
                         try {
                              posicion.setFila(posicion.getFila()-1);
                         } catch (Exception e) {
-                        } throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
-                       
+                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
+                        }
                          break;
                     case IZQUIERDA_ARRIBA:
                         try {
@@ -225,17 +225,16 @@ public class Caballo {
                     
                 
                 
-                
-                
+                                
                 
 		}
                
         
         
         
-}
+
         
 
 
-    
-
+        } 
+}
