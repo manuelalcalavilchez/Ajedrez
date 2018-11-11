@@ -5,6 +5,8 @@
  */
 package org.iesalandalus.programacion.caballoajedrez;
 
+import org.iesalandalus.programacion.utilidades.Entrada;
+
 /**
  *
  * @author Manuel
@@ -38,7 +40,7 @@ public class Caballo {
     }
     //creo un contructor por defecto que cree un caballo negro en posicion 8b. 
     
-       public Caballo(Color color, Posicion posicion){
+       public Caballo(){
            this.color=Color.NEGRO;
            this.posicion= new Posicion (8,'b');
                       
@@ -58,7 +60,16 @@ public class Caballo {
             this.posicion= new Posicion (1,'b');
                     else
             this.posicion=new Posicion (8,'b');
-
+        
+        //Crea un constructor para la clase que acepte como parámetros el color y la columna inicial.
+        //La columna inicial debe ser la 'b' o la 'g' 
+        //(de lo contrario debe lanzar la excepción IllegalArgumentException con un mensaje adecuado) 
+        //y creara un caballo del color dado y colocado en dicha columna y cuya 
+        //fila será la 1 si el blanco y la 8 si es el negro.
+        
+      
+        
+}
 }
     
-}
+
