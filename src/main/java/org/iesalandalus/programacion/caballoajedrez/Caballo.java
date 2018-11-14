@@ -16,7 +16,7 @@ import org.iesalandalus.programacion.utilidades.Entrada;
  */
 public class Caballo {
     
-    //delcaracion de atributos
+    //declaracion de atributos
     private Color color;
     private Posicion posicion;
     private int opcion;//variable necesaria para realizar operaciones en los metodos
@@ -71,32 +71,18 @@ public class Caballo {
         (de lo contrario debe lanzar la excepción IllegalArgumentException con un mensaje adecuado) 
         y creara un caballo del color dado y colocado en dicha columna y cuya 
         fila será la 1 si el blanco y la 8 si es el negro.*/
-        public Caballo (Color color, Posicion posicion)
+        public Caballo (Color color, char columna)
         {
-                      
-                 System.out.println("Introduzca el color deseado para el caballo: 1 Blanco, 2 Negro");
-                 opcion= Entrada.entero();
-                 if (opcion !=1 || opcion!=2)
-                     throw new IllegalArgumentException("ERROR: Valor no valido para la seleccion de color");
-                 if (opcion==1)
-                 this.color=Color.BLANCO;
-                 else   
-                 this.color=Color.NEGRO;
-           
-            
-            System.out.println("Introduzca la columna deseada ( debe ser 'g' o 'b'");
-            paramColum=Entrada.caracter();
-            
-            if (paramColum!='g' || paramColum!='d')
-                    throw new IllegalArgumentException("ERROR:Esa columna es erronea");
+                                
+          
   
-                    if (paramColum == 'g' && this.color==Color.BLANCO)
+                    if (columna == 'g' && this.color==Color.BLANCO)
                         this.posicion= new Posicion (1,'g');
-                    if (paramColum == 'g' && this.color==Color.NEGRO)
+                    if (columna == 'g' && this.color==Color.NEGRO)
                         this.posicion= new Posicion (8,'g');
-                    if (paramColum == 'b' && this.color==Color.BLANCO)
+                    if (columna == 'b' && this.color==Color.BLANCO)
                         this.posicion= new Posicion (1,'b');
-                    if (paramColum == 'b' && this.color==Color.NEGRO)
+                    if (columna == 'b' && this.color==Color.NEGRO)
                         this.posicion= new Posicion (8,'b');
                                        
         }
@@ -120,39 +106,39 @@ public class Caballo {
                 switch(direccion){
                     case ABAJO_DERECHA:
                         try {
-                            posicion.setColumna(posicion.getColumna()+1);
-                        } catch (Exception e) {
+                            posicion.setColumna((char) (posicion.getColumna()+1));
+                        } catch (Exception e) {System.out.println(e.getMessage());
                         throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         try {
                             posicion.setFila(posicion.getFila()-2);
-                        } catch (Exception e) {
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         
                         break;
                     case ABAJO_IZQUIERDA:
                         try {
-                            posicion.setColumna(posicion.getColumna()-1);
-                        } catch (Exception e) {
+                            posicion.setColumna((char) (posicion.getColumna()-1));
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         try {
                             posicion.setFila(posicion.getFila()-2);
-                        } catch (Exception e) {
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         
                          break;
                     case ARRIBA_DERECHA:
                         try {
-                             posicion.setColumna(posicion.getColumna()+1);
-                        } catch (Exception e) {
+                             posicion.setColumna((char) (posicion.getColumna()+1));
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         try {
                              posicion.setFila(posicion.getFila()+2);
-                        } catch (Exception e) {
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                        
@@ -160,64 +146,64 @@ public class Caballo {
                          
                     case ARRIBA_IZQUIERDA:
                         try {
-                             posicion.setColumna(posicion.getColumna()-1);
-                        } catch (Exception e) {
+                             posicion.setColumna((char) (posicion.getColumna()-1));
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         try {
                             posicion.setFila(posicion.getFila()+2);
-                        } catch (Exception e) {
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         
                          break;
                     case DERECHA_ABAJO:
                         try {
-                            posicion.setColumna(posicion.getColumna()+2);
-                        } catch (Exception e) {
+                            posicion.setColumna((char) (posicion.getColumna()+2));
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         try {
                              posicion.setFila(posicion.getFila()-1);
-                        } catch (Exception e) {
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                        
                          break;
                     case DERECHA_ARRIBA:
                         try {
-                             posicion.setColumna(posicion.getColumna()+2);
-                        } catch (Exception e) {
+                             posicion.setColumna((char) (posicion.getColumna()+2));
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         try {
                             posicion.setFila(posicion.getFila()+1);
-                        } catch (Exception e) {
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         
                          break;
                     case IZQUIERDA_ABAJO:
                         try {
-                             posicion.setColumna(posicion.getColumna()-2);
-                        } catch (Exception e) {
+                             posicion.setColumna((char) (posicion.getColumna()-2));
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         try {
                              posicion.setFila(posicion.getFila()-1);
-                        } catch (Exception e) {
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                          break;
                     case IZQUIERDA_ARRIBA:
                         try {
-                             posicion.setColumna(posicion.getColumna()-2);
-                        } catch (Exception e) {
+                             posicion.setColumna((char) (posicion.getColumna()-2));
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                         try {
                              posicion.setFila(posicion.getFila()+1);
-                        } catch (Exception e) {
+                        } catch (Exception e) {System.out.println(e.getMessage());
                          throw new OperationNotSupportedException("ERROR:Movimiento no permitido");
                         }
                        
@@ -261,4 +247,4 @@ public class Caballo {
                     public String toString() {
                         return "El Caballo es de color " + color + ", y está en la posición= " + posicion ;
                     }
-                                }
+}
