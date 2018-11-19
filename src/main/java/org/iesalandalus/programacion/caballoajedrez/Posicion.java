@@ -15,6 +15,8 @@ public class Posicion
     private int fila;
     private char columna;
     
+    
+    
     //creo los metodos get y set para los atributos
 
     public int getFila() {
@@ -51,26 +53,18 @@ public class Posicion
            
     public Posicion (int fila,char columna)
     {
-        
-        /*Llamamos al método que permite validar los parametos de fila
-         y columna   */
-        try {
-            setFila(fila);
-        } catch (Exception e) {
-        }
-        try {
-          setColumna(columna);  
-        } catch (Exception e) {
-        }
-        
+        setFila(fila);
+        setColumna(columna);       
     }
 
    
        //contructor copia
-    public Posicion(Posicion posicion)
+    public Posicion(final Posicion p)
     {
-       this.fila=posicion.fila;
-       this.columna=posicion.columna;   
+       if (p==null)
+            throw new IllegalArgumentException("ERROR: Copiando objeto vacio");
+       this.fila=p.fila;
+       this.columna=p.columna;   
         
     }
         //metodo equals
@@ -104,7 +98,7 @@ public class Posicion
 
     @Override
     public String toString() {
-        return "La posicion es: {fila=" + fila + "y columna=" + columna + '}';
+        return "La posicion es: {fila=" + fila + " y columna=" + columna + '}';
     }
     
     

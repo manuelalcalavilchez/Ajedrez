@@ -19,9 +19,7 @@ public class Caballo {
     //declaracion de atributos
     private Color color;
     private Posicion posicion;
-    private int opcion;//variable necesaria para realizar operaciones en los metodos
-    private char paramColum;//variable necesaria para realizar operaciones en los metodos
-    private int movimiento;//variable necesaria para realizar operaciones en el metodo mover
+   
     //metodos getters and setters
 
     public Color getColor() {
@@ -245,6 +243,6 @@ public class Caballo {
                     //implemento el método toString
                     @Override
                     public String toString() {
-                        return "El Caballo es de color " + color + ", y está en la posición= " + posicion ;
+                        return "El Caballo es de color " + color + ", y  " + posicion ;
                     }
 }
