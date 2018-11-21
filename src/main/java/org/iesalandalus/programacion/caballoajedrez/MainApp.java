@@ -38,7 +38,7 @@ public class MainApp {
         private static void mostrarMenu(){                   
             System.out.println("1-Crear caballo por defecto");
             System.out.println("2-Crear caballo de un color ( blanco o negro)");
-            System.out.println("3-Crear caballo en de un color en una columna inicial válida");
+            System.out.println("3-Crear caballo en de un color en una columna inicial v\u00e1lida");
             System.out.println("4-Mover el caballo");
             System.out.println("5-Salir");
                                         }
@@ -96,10 +96,7 @@ public class MainApp {
             
     
            System.out.println("--------------------------------------");
-           System.out.println("El caballo es de color "+ color);
-           System.out.println(" caballo.getColor   " + caballo.getColor());
-           System.out.println("caballo.getPosicion  "+ caballo.getPosicion());
-            System.out.println(caballo);
+           System.out.println(caballo);
            System.out.println("--------------------------------------");
             }
         
@@ -139,17 +136,8 @@ public class MainApp {
             System.out.println(e.getMessage());       
             }
   
-          
-
            System.out.println("--------------------------------------");
-           System.out.println("El caballo es de color "+ color);
-           System.out.println("la columna es "+ columna);                    
-           System.out.println(" caballo.getcolor   " + caballo.getColor());
-           System.out.println("caballo.getPosicion  "+ caballo.getPosicion());
-           
            System.out.println(caballo);
-          // System.out.println(" la columna es la " + posicion.getColumna() );
-          //System.out.println(" la columna es la " + posicion.getFila() );
            System.out.println("--------------------------------------");
             
         }//llave fin de metodo crearCaballoColorPosicion
@@ -165,10 +153,17 @@ public class MainApp {
         
         
         public static void mostrarMenuDirecciones(){
-        try {
+            if (caballo==null)
+            {   
+                System.out.println("Primero debes crear un caballo");
+             
+            }
+            else
+            
+        try {// este trycatch lo puso el IDE como sugerencia para que funcionara
             int movimiento;
             do{
-                System.out.println("Elija donde desea mover el caballo");
+                System.out.println("Elija d\u00f3nde desea mover el caballo");
                 System.out.println("1. Arriba y Derecha");
                 System.out.println("2. Arriba e Izquierda");
                 System.out.println("3. Derecha y Abajo");
@@ -207,17 +202,16 @@ public class MainApp {
                     caballo.mover(Direccion.IZQUIERDA_ABAJO);
                     break;
             }
-        } catch (OperationNotSupportedException ex) {
+            } catch (OperationNotSupportedException ex) {
             Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
-        }
         
-         System.out.println("--------------------------------------");
-           System.out.println("El caballo es de color "+ caballo.getColor());
+          }
+            System.out.println("--------------------------------------");
+            System.out.println(caballo);
+            System.out.println("--------------------------------------");
+       
           
-           System.out.println(caballo.getPosicion());
-           System.out.println("--------------------------------------");
-           System.out.println(caballo);
-          // System.out.println(" la columna es la " + columna  );
+             
         
         }
         
